@@ -24,7 +24,11 @@ RUN apt-get update \
 WORKDIR /root/dalai
 
 # Install dalai and its dependencies
-RUN npm install dalai@0.3.1
+# RUN npm install dalai@0.3.1
+
+COPY . /root/dalai
+
+RUN npm install
 
 RUN npx dalai alpaca setup
 
